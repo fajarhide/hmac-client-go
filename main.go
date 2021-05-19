@@ -63,9 +63,9 @@ func main() {
 
 	//header
 	authorization := "hmac username=\"" + username + "\", algorithm=\"" + algorithm + "\", headers=\"date request-line digest\", signature=\"" + signature + "\""
-	log.Println("Authorization :", authorization)
+	log.Println("Oka-Authorization :", authorization)
 	request.Header.Set("Digest", digestBodyHeader)
-	request.Header.Set("Authorization", authorization)
+	request.Header.Set("Oka-Authorization", authorization)
 	request.Header.Set("Date", dateFormat)
 
 	resp, err := client.Do(request)
